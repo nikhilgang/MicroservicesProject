@@ -1825,3 +1825,5 @@ java.io.EOFException: null
 2021-12-08 17:02:38,916 [Worker-559: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /AwsProject/src/main/java
 2021-12-08 17:02:38,916 [Worker-559: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /AwsProject/src/main/resources
 2021-12-08 17:02:38,916 [Worker-559: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /AwsProject/src/main/resources
+2021-12-08 17:02:38,916 [Worker-559: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /AwsProject/src/test/java
+2021-12-08 17:02:39,330 [Worker-559: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
