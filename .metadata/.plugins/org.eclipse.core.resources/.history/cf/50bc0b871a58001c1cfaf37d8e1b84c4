@@ -1,0 +1,7 @@
+FROM openjdk:11
+
+ADD target/AwsProject-0.0.2-SNAPSHOT.jar AwsProject.jar
+
+ENTRYPOINT ["java", "-jar", "AwsProject.jar"]
+
+EXPOSE 8098

@@ -1,0 +1,47 @@
+package com.client.security;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+@Configuration
+public class RPSecurityClass extends WebSecurityConfigurerAdapter {
+
+	// use for user creation
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+
+		auth.inMemoryAuthentication().withUser("mike").password(this.passwordEncoder().encode("mike123"))
+				.roles("admin");
+
+		auth.inMemoryAuthentication().withUser("neha").password(this.passwordEncoder().encode("neha123"))
+				.roles("client");
+
+	}
+
+	// use for Align roles and resources
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+
+		http.authorizeRequests().
+
+				antMatchers("/public/**").permitAll().antMatchers("/clientApi/**").hasRole("admin")
+				.antMatchers("/clientApi/**").hasAnyRole("admin", "client").anyRequest().authenticated().and()
+				.httpBasic();
+
+		http.csrf().disable();
+
+	}// end of http Security
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+}// end class

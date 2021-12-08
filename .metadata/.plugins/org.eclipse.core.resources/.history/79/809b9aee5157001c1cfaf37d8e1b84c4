@@ -1,0 +1,30 @@
+package com.aws.AWSdemo.entity;
+
+public class User {
+
+	private int Id;
+	private String UserName;
+
+	public User(int id, String userName) {
+		super();
+		Id = id;
+		UserName = userName;
+	}
+
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public String getUserName() {
+		return UserName;
+	}
+
+	public void setUserName(String userName) {
+		UserName = userName;
+	}
+
+}

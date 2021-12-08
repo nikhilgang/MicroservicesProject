@@ -1,0 +1,84 @@
+package com.agent.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.agent.entity.Agent;
+import com.agent.exception.ResourceNotFoundException;
+import com.agent.repo.AgentRepo;
+
+@RestController
+@RequestMapping("/agentApiNew")
+public class Controller2 {
+	@Autowired
+	AgentRepo agentRepo;
+	
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+    
+    @PostMapping("/agentRegistration")
+    public ResponseEntity<String> createAgent(@Valid @RequestBody Agent agent) throws ResourceNotFoundException {
+    	agentRepo.save(agent);
+    	
+		return new ResponseEntity<String>("Post succesfully",HttpStatus.OK);
+  
+    }
+
+    @PutMapping("/agents/{id}")
+    public ResponseEntity<Agent> updateAgent(@PathVariable(value = "id") int AgentId,
+         @Valid @RequestBody Agent AgentDetails) throws ResourceNotFoundException {
+        Agent Agent = agentRepo.findById(AgentId)
+        .orElseThrow(() -> new ResourceNotFoundException("Agent not found for this id :: " + AgentId));
+
+        Agent.setAgentName(AgentDetails.getAgentName());
+        Agent.setAgentState(AgentDetails.getAgentState());
+        Agent.setLinkedBankAccountName(AgentDetails.getLinkedBankAccountName());
+        final Agent updatedAgent = agentRepo.save(Agent);
+        return ResponseEntity.ok(updatedAgent);
+    }
+
+    @DeleteMapping("/agents/{id}")
+    public Map<String, Boolean> deleteAgent(@PathVariable(value = "id") int AgentId)
+         throws ResourceNotFoundException {
+        Agent Agent = agentRepo.findById(AgentId)
+       .orElseThrow(() -> new ResourceNotFoundException("Agent not found for this id :: " + AgentId));
+
+        agentRepo.delete(Agent);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
+    }
+    
+    @PutMapping("/fundTransfer/{id}/{amount}")
+    public ResponseEntity<Agent> updateAgentBallance(@PathVariable(value = "id") int AgentId,
+         @PathVariable(value =  "amount") int fundAmount) throws ResourceNotFoundException {
+        Agent Agent = agentRepo.findById(AgentId)
+        .orElseThrow(() -> new ResourceNotFoundException("Agent not found for this id :: " + AgentId));
+
+
+        Agent.setWalletBalance(Agent.getWalletBalance()-fundAmount);
+        final Agent updatedAgent = agentRepo.save(Agent);
+        return ResponseEntity.ok(updatedAgent);
+    }
+
+}

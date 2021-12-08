@@ -1,0 +1,10 @@
+server.port=8082
+spring.application.name=Client-Details
+spring.datasource.url=jdbc:mysql://localhost:3306/MainProjectinfo
+spring.datasource.username=root
+spring.datasource.password=01MAY@gets
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Nikhil_Gangwar\Downloads\OTP-Spring\otpService"/>
+			<item value="C:\Users\Nikhil_Gangwar\Desktop\rpay2\RapipaySecurityApp"/>
+			<item value="C:\Users\Nikhil_Gangwar\Desktop\rpay2\transactionService"/>
+			<item value="C:\Users\Nikhil_Gangwar\Desktop\rpay2\EurekaService"/>
+			<item value="C:\Users\Nikhil_Gangwar\Desktop\rpay2\clientService"/>
+			<item value="C:\Users\Nikhil_Gangwar\Desktop\rpay2\API-Gateway"/>
+			<item value="C:\Users\Nikhil_Gangwar\Desktop\rpay2\agentService"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

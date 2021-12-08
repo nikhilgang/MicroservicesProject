@@ -1,0 +1,25 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/otpdata
+spring.datasource.username=root
+spring.datasource.password=admin
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.datasource.initialize=false
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=nikhilgangwar70@gmail.com
+spring.mail.password=abc123@nNIKHIL
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+server.port = 8091
+server.ssl.key-store = classpath:skipper.keystore
+server.ssl.key-alias = skipper
+server.ssl.key-store-type = jks
+server.ssl.enabled = true
+server.ssl.key-store-password = skipper
+server.ssl.key-password = skipper
+
+NoOfAttempts=3
+Timelimit=300

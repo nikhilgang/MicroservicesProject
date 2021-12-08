@@ -1,0 +1,19 @@
+package com.aws.AWSdemo.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/awsapi")
+public class AWScontroller {
+	
+	
+	@GetMapping(/check)
+	public String Test()
+	{
+		return "AWS test is running..........";
+	}
+	
+
+}

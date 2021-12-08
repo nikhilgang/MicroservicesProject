@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.rp.securityapp.security&apos; to &apos;com.transaction.security&apos;&#x0D;&#x0A;- Original project: &apos;transactionService&apos;&#x0D;&#x0A;- Original element: &apos;transactionService/src/main/java/com.rp.securityapp.security&apos;&#x0D;&#x0A;- Renamed element: &apos;transactionService/src/main/java/com.transaction.security&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.rp.securityapp.security&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.rp.securityapp.security" name="com.transaction.security" qualified="false" references="true" stamp="1638625743923" textual="false" version="1.0"/>
+</session>

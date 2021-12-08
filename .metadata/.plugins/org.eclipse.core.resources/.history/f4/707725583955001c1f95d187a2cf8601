@@ -1,0 +1,30 @@
+server: 
+ port: 8030
+ 
+  
+eureka: 
+ instance:
+  hostname: localhost
+ 
+spring: 
+  application: 
+   name: api-gateway
+  cloud: 
+   gateway: 
+    routes: 
+     - id: Agent-Details
+       uri: lb://Agent-Details 
+       predicates: 
+        - Path=/agentApi/**
+     - id: Transaction-Details
+       uri: lb://Transaction-Details 
+       predicates: 
+        - Path=/transactionApi/**   
+     - id: Client-Details
+       uri: lb://Client-Details 
+       predicates: 
+        - Path=/clientApi/**
+     - id: OTP-Details
+       uri: lb://OTP-Details 
+       predicates: 
+        - Path=/clientApi/**

@@ -1,0 +1,5 @@
+package com.aws.AWSdemo.controller;
+
+public class AWScontroller {
+
+}
