@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.rapipay.otp.app.Services.OTPServiceTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.414 s <<< FAILURE! - in com.rapipay.otp.app.Services.OTPServiceTest
+testSendOTP  Time elapsed: 4.844 s  <<< ERROR!
+org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+	at com.rapipay.otp.app.Services.OTPServiceTest.testSendOTP(OTPServiceTest.java:40)
+Caused by: org.hibernate.exception.GenericJDBCException: could not execute statement
+	at com.rapipay.otp.app.Services.OTPServiceTest.testSendOTP(OTPServiceTest.java:40)
+Caused by: java.sql.SQLException: Field 'id' doesn't have a default value
+	at com.rapipay.otp.app.Services.OTPServiceTest.testSendOTP(OTPServiceTest.java:40)
+
